@@ -14,12 +14,20 @@
     # mishandling, or legal consequences resulting from the
     # use of this code in any unauthorized context.
     #
-    # Author: [Your Name or Initials]
+    # Author: Joven Caddauan
     ############################################################
 */
 public without sharing class ConstantVariables {
-    // Opportunity Status
+    // Opportunity
     public class Opportunity{
         public static final String CLOSED_WON = 'Closed Won';
+        public static final String RENEWAL = 'Prospecting';
+        public static final String TYPE = 'Existing Customer - Replacement';
+        public static final String RENEWAL_NAME = 'Renewal';
+    }
+
+    // Proposal
+    public class Proposal{
+        public static final String TYPE = 'Renewal';
     }
 }

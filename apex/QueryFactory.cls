@@ -14,7 +14,7 @@
     # mishandling, or legal consequences resulting from the
     # use of this code in any unauthorized context.
     #
-    # Author: [Your Name or Initials]
+    # Author: Joven Caddauan
     ############################################################
 */
 public class QueryFactory {
@@ -35,9 +35,22 @@ public class QueryFactory {
             SELECT OpportunityId, COUNT(Id) recordCount 
             FROM OpportunityLineItem 
             WHERE OpportunityId 
-            IN: oppList WITH SECURITY_ENFORCED
+            IN: oppList 
+            WITH SECURITY_ENFORCED
         ];
 
         return countRecord;
+    }
+
+    public static List<Proposal__c> getProposal(Map<Id, Id> opptMap) {
+        List<Proposal__c> proposalList = [
+            SELECT Id, OpportunityId 
+            FROM Proposal__c 
+            WHERE OpportunityId =: opptMap.keySet()
+            AND Primary__c = TRUE
+            WITH SECURITY_ENFORCED
+        ];
+
+        return proposalList;
     }
 }

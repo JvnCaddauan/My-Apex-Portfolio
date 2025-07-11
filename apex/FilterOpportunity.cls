@@ -14,7 +14,7 @@
     # mishandling, or legal consequences resulting from the
     # use of this code in any unauthorized context.
     #
-    # Author: [Your Name or Initials]
+    # Author: Joven Caddauan
     ############################################################
 */
 public without sharing class FilterOpportunity {
@@ -37,7 +37,7 @@ public without sharing class FilterOpportunity {
         // Get the record count of the closed won opportunities
         // To determine the total count of Proposal Item (CPQ Model proposal item and opportunity line item are sync)
         List<Id> oppIds = new List<Id>();
-        for(Opportunity op : oppList) {
+            for(Opportunity op : oppList) {
             oppIds.add(op.Id);
         }
 
@@ -50,11 +50,11 @@ public without sharing class FilterOpportunity {
         }
 
         for (Opportunity opp : oppList) {
-            Integer recordCount = groupedResult.containsKey(opId) ? groupedResult.get(opp.Id) : 0;
+            Integer recordCount = groupedResult.containsKey(opp.Id) ? groupedResult.get(opp.Id) : 0;
 
             if(recordCount < MAXED_COUNT){
-                Id opId = opp.Id;
-                Database.executeBatch(new BatchClone_CPQModel(opId), 1);
+                Id opportunityId = opp.Id;
+                Database.executeBatch(new BatchClone_CPQModel(opportunityId), 1);
             }else{
                 // Collect all opportunity Ids
                 skipList.add(opp);
