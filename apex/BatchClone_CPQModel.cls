@@ -90,12 +90,12 @@ public without sharing class BatchClone_CPQModel implements Database.Batchable<s
         String newClonedName;
         Date formattedDate = today.format('MM-dd-yyyy');
         if(name == null) {
-            newClonedName = 'Unknown';
+            newClonedName = 'REPLACE_ME';
 
             return newClonedName;
         }
 
-        newClonedName = 'Renewal ' +name+ ' - ' + formattedDate;
+        newClonedName = 'REPLACE_ME ' +name+ ' - ' + formattedDate;
 
         return newClonedName;
     }
@@ -105,7 +105,7 @@ public without sharing class BatchClone_CPQModel implements Database.Batchable<s
         Date formattedDate = today.format('MM-dd-yyyy');
 
         if(name == null) {
-            newClonedName = 'Unknown';
+            newClonedName = 'REPLACE_ME';
 
             return newClonedName;
         }

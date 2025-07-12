@@ -20,14 +20,14 @@
 public without sharing class ConstantVariables {
     // Opportunity
     public class Opportunity{
-        public static final String CLOSED_WON = 'Closed Won';
-        public static final String RENEWAL = 'Prospecting';
-        public static final String TYPE = 'Existing Customer - Replacement';
-        public static final String RENEWAL_NAME = 'Renewal';
+        public static final String CLOSED_WON = 'REPLACE_ME';
+        public static final String RENEWAL = 'REPLACE_ME';
+        public static final String TYPE = 'REPLACE_ME';
+        public static final String RENEWAL_NAME = 'REPLACE_ME';
     }
 
     // Proposal
     public class Proposal{
-        public static final String TYPE = 'Renewal';
+        public static final String TYPE = 'REPLACE_ME';
     }
 }
